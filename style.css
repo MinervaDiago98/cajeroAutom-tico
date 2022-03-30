@@ -1,0 +1,32 @@
+body{
+    background-color: #e7e4e4;
+}
+.navbar-purple{
+    --bs-bg-opacity:1;
+    background-color: #6b3468 !important;
+}
+.color-purple{
+    --bs-bg-opacity:1;
+    color: #6b3468 !important;
+}
+.color-name{
+    --bs-bg-opacity:1;
+    color: rgb(255, 255, 255) !important;
+}
+.color-moon{
+    --bs-bg-opacity:1;
+    color: rgb(253, 253, 253) !important;
+}
+.color-light{
+    --bs-bg-opacity:1;
+    color: rgb(182, 180, 180) !important;
+}
+.color-red{
+    --bs-bg-opacity:1;
+    color: rgb(255, 0, 0) !important;
+}
+.bg-info{
+    --bs-bg-opacity:1;
+    color: #a0699d !important;
+}
+

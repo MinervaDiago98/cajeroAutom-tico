@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="cash.svg">
+    <title>Tu ATM online</title>
+</head>
+<body>
+
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-purple mb">
+        <div class="container-fluid">
+            <a class="navbar-brand color-name " href="#">
+                <i class="bi bi-cash-coin color-moon"></i>
+                Tu ATM online
+            </a>
+            <!-- <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link color-light" href="#">Personas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color-light" href="#">Empresas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color-light me-4" href="#">Gobierno</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline" type="submit">
+                    <i class="bi bi-search-heart-fill color-moon fs-5"></i>
+                </button>
+            </form> -->
+        </div>
+        </div>
+    </nav>
+    <!-- Formulario -->
+    <div class=" container mt-5 ms-5">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-6">
+                <form class="bg-light p-5 rounded-top rounded-bottom">
+                    <div class="mt-2 text-center mb-3 ">
+                        <span class="text-center fs-3" id="saludo">¡Hola usuario!</span>
+                    </div>
+                    <div class="input-group mb-3 d-md-flex justify-content-md-center">
+                        <button class="btn btn-outline-secondary navbar-purple color-name" type="button" id="consultarSaldo" onclick="Mali()">Consultar saldo</button>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label for="" class="fs-5"></label>
+                        <span id="saldo" class="color-purple fs-5" >Saldo: </span>     
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Monto a ingresar" >
+                        <button class="btn btn-outline-secondary navbar-purple color-name" type="button" id="button-addon2">Ingresar monto</button>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Monto a retirar">
+                        <button class="btn btn-outline-secondary navbar-purple color-name" type="button" id="retirar" onclick="retirar()">Retirar monto</button>
+                    </div>
+                    <div class="mt-5">  
+                        <!-- <span id="transac" class="color-light">se realizó ....</span>  -->
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
