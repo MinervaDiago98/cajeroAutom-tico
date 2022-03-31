@@ -6,16 +6,22 @@ var cuentas = [
 ]
 
 let nombre, saldoInicial, saldoActual
+
+var consultar = document.getElementById('btnConsultar')
+var depositar = document.getElementById('btnDepositar')
+var retirar = document.getElementById('btnRetirar')
 let boton = document.getElementById('botonIngresar')
-let consultar = document.getElementById('btnConsultar')
-let depositar = document.getElementById('btnDepositar')
-let retirar = document.getElementById('btnRetirar')
-
-consultar.addEventListener('click', consultarSaldo)
-depositar.addEventListener('click', depositarMonto)
-retirar.addEventListener('click', retirarMonto)
 
 
+// depositar.addEventListener('click', depositarMonto)
+// retirar.addEventListener('click', retirarMonto)
+
+if(consultar){
+    consultar.addEventListener('click', consultarSaldo)
+}
+if(depositar){
+    depositar.addEventListener('click', depositarMonto)
+}
 if(boton){
     boton.addEventListener('click', ingresar)
 }
@@ -75,6 +81,8 @@ function ingresar(e){
 }
 saldoActual = localStorage.getItem('saldo')
 
+
+//Vaciar campos
 function vaciarSaldo(){
     document.getElementById('saldo').innerHTML = ('')
 }
@@ -94,21 +102,24 @@ function vaciarTransaccion(){
 function vaciarSaldo(){
     document.getElementById('saldo').innerHTML = ('') 
 }
-function vaciarInputIngresar(){
+function vaciarInputDepositar(){
     document.getElementById('depositar').value = ('') 
 }
 function vaciarInputRetirar(){
     document.getElementById('retirar').value = ('') 
 }
 
-function consultarSaldo(){
+
+//Consultar saldo
+function consultarSaldo(e){
+    e.preventDefault()
     document.getElementById('saldo').innerHTML = ("Saldo: $" +saldoActual) 
     vaciarAlertas()
     vaciarTransaccion()
 } 
 
+//Depositar
 function depositarMonto(){
-
     let monto = document.getElementById('depositar').value
     let deposito = parseFloat(monto)
     let saldoMasDeposito = deposito + parseFloat(saldoActual)
@@ -134,12 +145,15 @@ function depositarMonto(){
 
     }else{
         vaciarInputDepositar()
+        vaciarAlertas()
         saldoActual = saldoMasDeposito
         document.getElementById('transaccion').innerHTML = ("Deposito de: $" +deposito)
         document.getElementById('saldo').innerHTML = ("Nuevo saldo total: $ " +saldoActual) 
-        vaciarAlertas()
+        
     }   
 }
+
+//Retirar
 function retirarMonto(){
     let cantidad = document.getElementById('retirar').value
     let retiro = parseFloat(cantidad)
