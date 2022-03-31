@@ -5,15 +5,33 @@ var cuentas = [
     { nombre: 'Maui', clave: '567', saldo: 67 }
 ]
 
-// let boton = document.getElementById('boton')
-// boton.addEventListener('click', ingresar)
+let boton = document.getElementById('btnDepositar')
+boton.addEventListener('click', Depositar)
+
+let boton2 = document.getElementById('btnRetirar')
+boton2.addEventListener('click', Retirar)
+
+var saldoMali = cuentas[0].saldo
 
 function pagCuenta(){
     location.href = 'cuenta.html'
 }
 
 function Mali(){
-    var saldoMali = cuentas[0].saldo
+    document.getElementById('saldo').innerHTML = ("Saldo: " +saldoMali)   
+}
+
+function Depositar(){
+    var deposito = document.getElementById('depositar').value
+    document.getElementById('depositar').value = (" ")
+    saldoMali = parseInt(deposito) + saldoMali
+    document.getElementById('saldo').innerHTML = ("Saldo: " +saldoMali)   
+}
+function Retirar(){
+    var retiro = document.getElementById('retirar').value
+    document.getElementById('retirar').innerHTML = (" ")
+    document.getElementById('retirar').value = (" ")
+    saldoMali =  saldoMali - parseInt(retiro) 
     document.getElementById('saldo').innerHTML = ("Saldo: " +saldoMali)   
 }
 
@@ -28,7 +46,6 @@ function ingresar(){
     }
     if(arreglo [0] == credencial){
         pagCuenta()
-        console.log(Mali())
     }
     else if(arreglo [1] == credencial){
         
@@ -40,3 +57,4 @@ function ingresar(){
         document.getElementById('alerta').innerHTML = ("Usuario o contraseña incorrectos")
     }   
 }
+
