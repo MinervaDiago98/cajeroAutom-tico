@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,33 +12,24 @@
     <link rel="icon" href="cash.svg">
     <title>Tu ATM online</title>
 </head>
+
 <body>
 
-     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-purple mb">
-        <div class="container-fluid">
-            <a class="navbar-brand color-name " href="#">
-                <i class="bi bi-cash-coin color-moon"></i>
-                Tu ATM online
-            </a>
-            <!-- <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link color-light" href="#">Personas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link color-light" href="#">Empresas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link color-light me-4" href="#">Gobierno</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline" type="submit">
-                    <i class="bi bi-search-heart-fill color-moon fs-5"></i>
-                </button>
-            </form> -->
-        </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-purple mb">
+        <div class="container-fluid ">
+                <div class="">
+                    <a class="navbar-brand color-name " href="#">
+                        <i class="bi bi-cash-coin color-moon"></i>
+                        Tu ATM online
+                    </a>
+                </div>
+                <div class="me-3 text-center">
+                    <!-- <i class="bi bi-check-circle color-name"></i> -->
+                        <span class="text-center color-name fs-5 me-2" id="saludo"></span>
+                        <i class="bi bi-stars color-name"></i>
+                        <!-- <img src="gera.png" class="img-fluid me-2"> -->
+                </div>
         </div>
     </nav>
     <!-- Formulario -->
@@ -46,30 +38,55 @@
             <div class="col-4"></div>
             <div class="col-4">
                 <form class="bg-light p-5 rounded-top rounded-bottom">
-                    <div class="mt-2 text-center mb-3 ">
-                        <span class="text-center fs-3" id="saludo">¡Hola usuario!</span>
-                    </div>
                     <div class="input-group mb-3 d-md-flex justify-content-md-center">
-                        <button class="btn btn-outline-secondary navbar-purple color-name" type="button" id="consultarSaldo" onclick="Mali()">Consultar saldo</button>
+                        <button class="btn navbar-purple color-name" type="button"
+                            id="btnConsultar">Consultar saldo</button>
                     </div>
                     <div class="input-group mb-3">
                         <input type="number" class="form-control" placeholder="Monto a ingresar" id="depositar">
-                        <button class="btn btn-outline-secondary navbar-purple color-name" type="button" id="btnDepositar"">Ingresar monto</button>
+                        <button class="btn btn-outline-secondary navbar-purple color-name" type="button"
+                            id="btnDepositar" >Ingresar monto</button>
                     </div>
                     <div class="input-group mb-3">
                         <input type="number" class="form-control" placeholder="Monto a retirar" id="retirar">
-                        <button class="btn btn-outline-secondary navbar-purple color-name" type="button" id="btnRetirar">Retirar monto</button>
+                        <button class="btn btn-outline-secondary navbar-purple color-name" type="button"
+                            id="btnRetirar">Retirar monto</button>
                     </div>
                     <div class="mt-5 mb-1">
                         <label for="" class="fs-5"></label>
-                        <span id="saldo" class="color-purple fs-5" ></span>     
+                        <span id="transaccion" class="color-purple fs-5"></span>
                     </div>
-                  </form>
+                    <div class=" mb-1">
+                        <label for="" class="fs-5"></label>
+                        <span id="saldo" class="color-purple fs-1 color-light"></span>
+                    </div>
+                    <div class="text-center">
+                        <span id="alerta" class="color-red "></span>
+                    </div>
+                    <div class="">
+                        <span id="alertaSaldo" class="color-light "></span>
+                    </div>
+                    <div class="">
+                        <span id="alertaTransaccion" class="color-light "></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-5">
+        <div class="row mt-5">
+            <div class="col-11"></div>
+            <div class="col -1 text-end">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-x fs-2" onclick="pagIndex()"></i>
+                    <p>Salir</p>
+                </a>
             </div>
         </div>
     </div>
 
     <script src="app.js"></script>
-    
+
 </body>
+
 </html>
