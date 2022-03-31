@@ -107,14 +107,11 @@ function consultarSaldo(){
     vaciarTransaccion()
 } 
 
-
 function depositarMonto(){
+
     let monto = document.getElementById('depositar').value
     let deposito = parseFloat(monto)
-    let saldoMasDeposito = deposito + saldoActual
-    console.log(saldoActual)
-    console.log(deposito)
-    console.log(saldoMasDeposito)
+    let saldoMasDeposito = deposito + parseFloat(saldoActual)
 
     if(monto === ''){
         document.getElementById('alerta').innerHTML = ('Ingrese un monto antes de depositar')
@@ -128,7 +125,7 @@ function depositarMonto(){
         vaciarTransaccion()
     }
     else if(saldoMasDeposito > 990){
-        vaciarInputRetirar()
+        vaciarInputDepositar()
         document.getElementById('alerta').innerHTML = ('¡No puedes tener más de $990 en cuenta!')
         document.getElementById('alertaSaldo').innerHTML = ('Saldo actual: $'+saldoActual)
         document.getElementById('alertaTransaccion').innerHTML = (' Transacción rechazada: deposito de $'+deposito)
@@ -136,7 +133,7 @@ function depositarMonto(){
         vaciarTransaccion()
 
     }else{
-        vaciarInputRetirar()
+        vaciarInputDepositar()
         saldoActual = saldoMasDeposito
         document.getElementById('transaccion').innerHTML = ("Deposito de: $" +deposito)
         document.getElementById('saldo').innerHTML = ("Nuevo saldo total: $ " +saldoActual) 
@@ -179,5 +176,3 @@ function retirarMonto(){
         vaciarAlertas()
     }
 }
-
-
