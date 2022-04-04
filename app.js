@@ -2,7 +2,8 @@
 var cuentas = [
     { nombre: 'Mali', clave: '123', saldo: 200 },
     { nombre: 'Gera', clave: '345', saldo: 290 },
-    { nombre: 'Maui', clave: '567', saldo: 67 }
+    { nombre: 'Maui', clave: '567', saldo: 67 },
+    { nombre: 'Flor', clave: '789', saldo: 0 }
 ]
 
 //variables para utilizar con localStorage
@@ -65,43 +66,19 @@ function ingresar() {
     const usuario = document.getElementById('usuario').value
     const contraseña = document.getElementById('contraseña').value
 
-    //concateno el valor de las variables 'usuario' y 'contraseña', y se lo asigno a 'credencial'
-    const credencial = usuario + contraseña
-
-    //declaro un arreglo vacío en donde ingresaré los datos de nombre y contraseña de los objetos de 'cuentas'
-    const arreglo = []
-
-    //itero sobre el arreglo de objetos 'cuenta'
     for (let i = 0; i < cuentas.length; i++) {
-        //agrego al arreglo vacío, y concatenando, el valor de las propiedades 'nombre' y 'clave' de cada objeto
-        arreglo.push(cuentas[i].nombre + cuentas[i].clave)
-    }
 
-    //en las condicionales siguientes comparo si algún indice de mi arreglo es igual al valor de 'credencial'
-    if (arreglo[0] == credencial) {
-        pagCuenta()
-        nombre = cuentas[0].nombre
-        localStorage.setItem('saludo', nombre)
-        saldoInicial = cuentas[0].saldo
-        localStorage.setItem('saldo', saldoInicial)
-    }
-    else if (arreglo[1] == credencial) {
-        pagCuenta()
-        nombre = cuentas[1].nombre
-        localStorage.setItem('saludo', nombre)
-        saldoInicial = cuentas[1].saldo
-        localStorage.setItem('saldo', saldoInicial)
-    }
-    else if (arreglo[2] == credencial) {
-        pagCuenta()
-        nombre = cuentas[2].nombre
-        localStorage.setItem('saludo', nombre)
-        saldoInicial = cuentas[2].saldo
-        localStorage.setItem('saldo', saldoInicial)
-    }
-    else {
-        document.getElementById('alerta').innerHTML = ("Usuario o contraseña incorrectos")
-    }
+        if(usuario == cuentas[i].nombre && contraseña == cuentas[i].clave){
+            pagCuenta()
+            nombre = usuario
+            localStorage.setItem('saludo', nombre)
+            saldoInicial = cuentas[i].saldo
+            localStorage.setItem('saldo', saldoInicial)
+        }
+        else{
+            document.getElementById('alerta').innerHTML = ('Usuario o contraseña incorrectos')
+        }
+    } 
 }
 
 //Almacenando el valor del saldo  en la variable 'saldoActual'
