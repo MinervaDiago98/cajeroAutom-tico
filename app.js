@@ -2,7 +2,8 @@
 var cuentas = [
     { nombre: 'Mali', clave: '123', saldo: 200 },
     { nombre: 'Gera', clave: '345', saldo: 290 },
-    { nombre: 'Maui', clave: '567', saldo: 67 }
+    { nombre: 'Maui', clave: '567', saldo: 67 },
+    { nombre: 'Flor', clave: '789', saldo: 0 }
 ]
 
 //variables para utilizar con localStorage
@@ -63,21 +64,21 @@ function vaciarAlerta2y3() {
 function ingresar() {
 
     const usuario = document.getElementById('usuario').value
-    //const contraseña = document.getElementById('contraseña').value
+    const contraseña = document.getElementById('contraseña').value
 
-    //itero sobre el arreglo de objetos 'cuenta'
     for (let i = 0; i < cuentas.length; i++) {
-        //agrego al arreglo vacío, y concatenando, el valor de las propiedades 'nombre' y 'clave' de cada objeto
-        if(cuentas[i].name == usuario){
-            //pagCuenta()
-            nombre = cuentas[i].nombre
+
+        if(usuario == cuentas[i].nombre && contraseña == cuentas[i].clave){
+            pagCuenta()
+            nombre = usuario
+            localStorage.setItem('saludo', nombre)
             saldoInicial = cuentas[i].saldo
+            localStorage.setItem('saldo', saldoInicial)
         }
-    }
-    localStorage.setItem('saludo', nombre)
-    localStorage.setItem('saldo', saldoInicial)
-    console.log(nombre)
-        
+        else{
+            document.getElementById('alerta').innerHTML = ('Usuario o contraseña incorrectoss')
+        }
+    } 
 }
 
 //Almacenando el valor del saldo  en la variable 'saldoActual'
@@ -86,7 +87,7 @@ saldoActual = localStorage.getItem('saldo')
 //Funcion para iniciar el saludo del usuario en la página del usuario
 function saludoUsuario() {
     let nombreUsuario = localStorage.getItem('saludo')
-    //document.getElementById('saludo').innerHTML = ('¡Hola !')
+    document.getElementById('saludo').innerHTML = ('¡Hola ' + nombreUsuario + '!')
 }
 
 //Funciones para consultar, depositar y retirar
