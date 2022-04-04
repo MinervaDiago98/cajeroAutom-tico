@@ -1,5 +1,5 @@
 body{
-    background-color: #e7e4e4;
+    background-color: rgb(216, 176, 241);
 }
 .navbar-purple{
     --bs-bg-opacity:1;
@@ -13,10 +13,6 @@ body{
     --bs-bg-opacity:1;
     color: rgb(255, 255, 255) !important;
 }
-.color-moon{
-    --bs-bg-opacity:1;
-    color: rgb(253, 253, 253) !important;
-}
 .color-light{
     --bs-bg-opacity:1;
     color: rgb(182, 180, 180) !important;
@@ -25,8 +21,11 @@ body{
     --bs-bg-opacity:1;
     color: rgb(255, 0, 0) !important;
 }
-.bg-info{
+.bg-violet{
     --bs-bg-opacity:1;
-    color: #a0699d !important;
+    background-color: #400e3e !important;
 }
-
+.color-gray{
+    --bs-bg-opacity:1;
+    color: rgb(110, 109, 109) !important;
+}
