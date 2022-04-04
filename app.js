@@ -76,7 +76,7 @@ function ingresar() {
             localStorage.setItem('saldo', saldoInicial)
         }
         else{
-            document.getElementById('alerta').innerHTML = ('Usuario o contraseña incorrectos')
+            document.getElementById('alerta').innerHTML = ('Usuario o contraseña incorrectoss')
         }
     } 
 }
