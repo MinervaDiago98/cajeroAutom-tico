@@ -59,6 +59,11 @@ function vaciarAlerta2y3() {
     document.getElementById('alertaSaldo').innerHTML = ('')
     document.getElementById('alertaTransaccion').innerHTML = ('')
 }
+function vaciarSaldoAlertaTransaccion(){
+    vaciarAlerta2y3()
+    vaciarSaldo()
+    vaciarTransaccion()
+}
 
 //Función para ingresar a la página del usuario
 function ingresar() {
@@ -89,7 +94,6 @@ function saludoUsuario() {
     let nombreUsuario = localStorage.getItem('saludo')
     document.getElementById('saludo').innerHTML = ('¡Hola ' + nombreUsuario + '!')
 }
-
 //Funciones para consultar, depositar y retirar
 function consultarSaldo() {
     document.getElementById('saldo').innerHTML = ("Saldo: $" + saldoActual)
@@ -108,9 +112,7 @@ function depositarMonto() {
 
     if (monto === '') {
         document.getElementById('alerta').innerHTML = ('Escriba el monto a depositar')
-        vaciarAlerta2y3()
-        vaciarSaldo()
-        vaciarTransaccion()
+       vaciarSaldoAlertaTransaccion()
     }
     else if (deposito <= 0) {
         document.getElementById('alerta').innerHTML = ('Ingrese una cantidad válida')
@@ -134,7 +136,6 @@ function depositarMonto() {
         vaciarSaldo()
     }
 }
-
 function retirarMonto() {
     let cantidad = document.getElementById('retirar').value
     let retiro = parseFloat(cantidad)
@@ -144,21 +145,15 @@ function retirarMonto() {
 
     if (cantidad === '') {
         document.getElementById('alerta').innerHTML = ('Escriba el monto a retirar')
-        vaciarSaldo()
-        vaciarTransaccion()
-        vaciarAlerta2y3()
+        vaciarSaldoAlertaTransaccion()
     }
     else if (retiro <= 0) {
-        vaciarSaldo()
-        vaciarTransaccion()
-        vaciarAlerta2y3()
+        vaciarSaldoAlertaTransaccion()
         document.getElementById('alerta').innerHTML = ('Ingrese una cantidad válida')
     }
     else if (saldoActual < retiro) {
         document.getElementById('alerta').innerHTML = ('No cuenta con esa cantidad para retirar')
-        vaciarSaldo()
-        vaciarTransaccion()
-        vaciarAlerta2y3()
+        vaciarSaldoAlertaTransaccion()
     }
     else if (saldoMenosRetiro < 10) {
         vaciarInputRetirar()
