@@ -16,39 +16,40 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-purple">
-        <div class="container-fluid ">
-                <div class="">
-                    <a class="navbar-brand color-name " href="#">
-                        <i class="bi bi-cash-coin color-moon"></i>
-                        Tu ATM online
-                    </a>
-                </div>
-                <div class="me-1 text-center">
-                        <span class="text-center color-name fs-5 me-2" id="saludo"></span>
-                        <i class="bi bi-stars color-name me-5"></i>
-                        <a class="navbar-brand" href="#">
-                            <i class="bi bi-x color-light ms-5" onclick="pagIndex()"></i>
-                            <span class="color-light">Salir</span>
-                        </a>
-                </div>
+    <nav class="navbar navbar-expand-lg bg-violet">
+        <div class="container-fluid">
+            <div class="">
+                <a class="navbar-brand color-name " href="#">
+                    <i class="bi bi-cash-coin color-moon"></i>
+                    Tu ATM online
+                </a>
+            </div>
+            <div class="me-1 text-center">
+                <i class="bi bi-stars color-name me-1"></i>
+                <span class="text-center color-name fs-5 me-2" id="saludo"></span>
+                <i class="bi bi-stars color-name me-5"></i>
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-x color-light ms-5" onclick="pagIndex()"></i>
+                    <span class="color-light" onclick="pagIndex()">Salir</span>
+                </a>
+            </div>
         </div>
     </nav>
     <!-- Formulario -->
     <div class="container mt-5">
-        <div class="row">
-            <div class="col">
+        <div class="row ms-5">
+            <div class="col-10 ms-5 mt-5">
                 <form class="rounded-top rounded-bottom d-flex mb-5">
-                    <div class="input-group ms-5">
-                        <button class="btn navbar-purple color-name fs-4" type="button"
-                            id="btnConsultar">Consultar saldo</button>
+                    <div class="input-group ">
+                        <button class="btn navbar-purple color-name fs-4" type="button" id="btnConsultar"
+                            onclick="">Consultar saldo</button>
                     </div>
-                    <div class="input-group ms-5 me-5">
+                    <div class="input-group">
                         <input type="number" class="form-control fs-4" placeholder="$" id="depositar">
                         <button class="btn btn-outline-secondary navbar-purple color-name fs-4" type="button"
-                            id="btnDepositar"  >Ingresar monto</button>
+                            id="btnDepositar">Ingresar monto</button>
                     </div>
-                    <div class="input-group ms-5 me-5">
+                    <div class="input-group ms-5">
                         <input type="number" class="form-control fs-4" placeholder="$" id="retirar">
                         <button class="btn btn-outline-secondary navbar-purple color-name fs-4" type="button"
                             id="btnRetirar" onclick="retirarMonto()">Retirar monto</button>
@@ -61,16 +62,16 @@
         <div class="row">
             <div class="col-4"></div>
             <div class="col-4">
-                <form class="bg-light p-5 mt-5 rounded-top rounded-bottom text-center">
-                
-                    <div class="">
-                        <label for="" class="fs-4"></label>
-                        <span id="transaccion" class="color-purple fs-4"></span>
-                    </div>
+                <form class="bg-light p-5 mt-5 ms-5 rounded-top rounded-bottom text-center">
 
                     <div class="">
-                        <label for="" class="fs-2"></label>
-                        <span id="saldo" class="color-purple fs-2 color-light"></span>
+                        <span id="transaccion" class="color-purple fs-4"></span>
+                    </div>
+                    <div class="">
+                        <span id="nuevoSaldo" class="color-purple fs-4"></span>
+                    </div>
+                    <div class="">
+                        <span id="saldo" class="color-purple fs-1 color-gray"></span>
                     </div>
                     <div class="">
                         <span id="alerta" class="color-red  fs-5"></span>
@@ -79,7 +80,7 @@
                         <span id="alertaSaldo" class="color-light fs-5"></span>
                     </div>
                     <div class="">
-                        <span id="alertaTransaccion" class="color-light fs-5"></span>
+                        <span id="alertaTransaccion" class="color-light"></span>
                     </div>
                 </form>
             </div>
